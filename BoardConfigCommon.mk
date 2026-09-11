@@ -76,9 +76,6 @@ ifeq ($(TARGET_HAS_UDFPS),true)
 TARGET_USES_FOD_ZPOS := true
 endif
 
-# Filesystem
-TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
-
 # Fingerprint
 ifeq ($(TARGET_HAS_UDFPS),true)
 TARGET_SURFACEFLINGER_UDFPS_LIB := //hardware/xiaomi:libudfps_extension.xiaomi
@@ -147,9 +144,6 @@ BOARD_SUPER_PARTITION_SIZE := 9126805504
 BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := $(ALL_PARTITIONS)
 BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 9122611200 # (BOARD_SUPER_PARTITION_SIZE - 4MiB)
-
-# Partitions - reserved size
--include vendor/lineage/config/BoardConfigReservedSize.mk
 
 # Platform
 BOARD_VENDOR := xiaomi
